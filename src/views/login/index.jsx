@@ -6,13 +6,16 @@ export default class index extends Component {
   render() {
     return (
       <div className="login">
+        <h1 style={{ color: '#fff' }}>客情分析和管理运营系统</h1>
         <Card className="center">
-          <TabPane tab="密码登录" key="1">
-            Content of Tab Pane 1
-          </TabPane>
-          <TabPane tab="短信登录" key="2">
-            Content of Tab Pane 2
-          </TabPane>
+          <Tabs defaultActiveKey="1" centered tabBarGutter={100}>
+            <TabPane tab="密码登录" key="1">
+              Content of Tab Pane 1
+            </TabPane>
+            <TabPane tab="短信登录" key="2">
+              Content of Tab Pane 2
+            </TabPane>
+          </Tabs>
         </Card>
       </div>
     );
