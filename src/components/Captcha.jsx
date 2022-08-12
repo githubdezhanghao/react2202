@@ -5,12 +5,12 @@ import PTS from "prop-types";
 import axios from "axios";
 export default function Captcha(props) {
   const [img, setImg] = useState("");
-  const [key, setkey] = useState("");
   const load = () => {
     axios.get("https://reactapi.iynn.cn/captcha/api/math").then((res) => {
       const { img, key } = res.data;
       setImg(img);
-      setkey(key);
+      console.log(props);
+      props.children(key)
     });
   };
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function Captcha(props) {
         src={img}
         alt=""
         onClick={load}
-        style={{ cursor: "point" }}
+        style={{ cursor: "point"  ,boxShadow:'0 0 10px blue'}}
         width={width}
         height={height}
       />
